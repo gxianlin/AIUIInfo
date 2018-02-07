@@ -39,7 +39,6 @@ public class RecordUtils {
 
     private String pcmFilePath;            //当前录音文件保存的绝对路径
     private String wavFilePath;            //当前录音文件保存的绝对路径
-    private String opusFilePath;            //当前录音文件保存的绝对路径
 
     //录音状态
     private static final int STATE_NONE = 0;        //空闲状态
@@ -126,7 +125,6 @@ public class RecordUtils {
         //创建当前保存的文件名
         this.pcmFilePath = OpusTrackInfo.getInstance().getPcmFileName();
         this.wavFilePath = OpusTrackInfo.getInstance().getWavFileName();
-        this.opusFilePath = OpusTrackInfo.getInstance().getOpusFileName();
 
         //创建文件对象，准备开始保存录音
         File file = new File(pcmFilePath);
@@ -257,10 +255,7 @@ public class RecordUtils {
     }
 
     public String getOpusFilePath() {
-        if (TextUtils.isEmpty(opusFilePath)) {
-            return "";
-        }
-        return opusFilePath;
+        return OpusTrackInfo.getInstance().getOpusFileName();
     }
 
 
