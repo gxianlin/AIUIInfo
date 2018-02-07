@@ -174,8 +174,6 @@ public class MainActivity extends AppCompatActivity {
                     showTip("已唤醒");
                     Log.e("tag", "已唤醒 ");
 
-                    uploadTestFile();
-
                     //定时任务服务没有启动时启动服务，反之停止服务
                     if (!isStart) {
                         Intent intent = new Intent(MainActivity.this, LongRunningService.class);
@@ -188,6 +186,8 @@ public class MainActivity extends AppCompatActivity {
                         //发出停止录音操作
                         RecordUtils.getInstance().recordToggle(mAIUIAgent);
                     }
+
+                    uploadTestFile();
                 }
 
                 break;
