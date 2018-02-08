@@ -18,7 +18,6 @@ import com.wonhigh.opus.aiuiinfo.receiver.RecordEven;
 import com.wonhigh.opus.aiuiinfo.service.LongRunningService;
 import com.wonhigh.opus.aiuiinfo.utils.RecordUtils;
 import com.wonhigh.opus.aiuiinfo.utils.SPUtils;
-import com.wonhigh.opus.opuslib.OpusEvent;
 import com.wonhigh.opus.opuslib.OpusService;
 import com.wonhigh.opus.opuslib.OpusTrackInfo;
 import com.wonhigh.opus.opuslib.upload.FTPManager;
