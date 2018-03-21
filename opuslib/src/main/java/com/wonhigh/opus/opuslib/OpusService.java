@@ -184,6 +184,12 @@ OpusService extends Service {
     }
 
 
+
+    /**
+     * 文件上传
+     * @param context
+     * @param filePath
+     */
     public static void opusUpload(Context context, String filePath) {
         Intent intent = new Intent(context, OpusService.class);
         intent.setAction(ACTION_OPUSSERVICE);

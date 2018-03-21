@@ -1,8 +1,6 @@
 package com.wonhigh.opus.opuslib;
 
 
-import android.util.Log;
-
 import com.wonhigh.opus.opuslib.upload.FTPManager;
 import com.wonhigh.opus.opuslib.upload.IResultListener;
 import com.wonhigh.opus.opuslib.utils.Utils;

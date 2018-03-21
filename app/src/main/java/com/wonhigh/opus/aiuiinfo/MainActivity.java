@@ -250,12 +250,12 @@ public class MainActivity extends AppCompatActivity {
                     FTPManager.getInstance().ftp4jUpload(path, new IResultListener() {
                         @Override
                         public void onSuccess(String info) {
-
+                            Log.e("tag", "工作状态文件：" + info);
                         }
 
                         @Override
                         public void onFilure(String message) {
-
+                            Log.e("tag", "工作状态文件：" + message);
                         }
                     });
 
@@ -320,6 +320,7 @@ public class MainActivity extends AppCompatActivity {
 
                     //删除pcm文件
                     OpusService.deleteFile(getApplicationContext(), pcmFilePath);
+
                     //opus编码
                     OpusService.encode(getApplicationContext(), wavFilePath, RecordUtils.getInstance().getOpusFilePath(), "");
                     break;
@@ -345,7 +346,6 @@ public class MainActivity extends AppCompatActivity {
                     //执行文件上传操作
                     OpusService.opusUpload(getApplicationContext(), opusFilePath);
                     break;
-
 
                 case UPLOAD_START:
                     Log.e("tag", "文件上传开始");
@@ -383,11 +383,12 @@ public class MainActivity extends AppCompatActivity {
             FTPManager.getInstance().ftp4jUpload(failedFilePath, new IResultListener() {
                 @Override
                 public void onSuccess(String info) {
-
+                    Log.e("tag", "文件上传：" + info);
                 }
 
                 @Override
                 public void onFilure(String message) {
+                    Log.e("tag", "文件上传：" + message);
                     //再次失败时保存，下次进入应用后统一上传
                     failedPaths.add(failedFilePath);
 
@@ -414,12 +415,13 @@ public class MainActivity extends AppCompatActivity {
                 FTPManager.getInstance().ftp4jUpload(failedPaths.get(i), new IResultListener() {
                     @Override
                     public void onSuccess(String info) {
+                        Log.e("tag", "文件上传：" + info);
                         failedPaths.remove(index);
                     }
 
                     @Override
                     public void onFilure(String message) {
-
+                        Log.e("tag", "文件上传：" + message);
                     }
                 });
             }
